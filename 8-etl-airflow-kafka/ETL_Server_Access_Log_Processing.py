@@ -53,7 +53,7 @@ transform = BashOperator(
 
 load = BashOperator(
     task_id='load',
-    bash_command='zip log.zip capitalized.txt' ,
+    bash_command='zip log.zip /home/project/capitalized.txt',
     dag=dag,
 )
 
