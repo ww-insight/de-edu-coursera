@@ -31,21 +31,21 @@ dag = DAG(
 # define the task 'download'
 download = BashOperator(
     task_id='download',
-    bash_command='wget "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/web-server-access-log.txt"',
+    bash_command='wget -O "/home/project/web-server-access-log.txt" "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/web-server-access-log.txt"',
     dag=dag,
 )
 
 # define the task 'extract'
 extract = BashOperator(
     task_id='extract',
-    bash_command='cut -f1,4 -d"#" web-server-access-log.txt > /home/project/airflow/dags/extracted.txt',
+    bash_command='cut -f1,4 -d"#" /home/project/web-server-access-log.txt > /home/project/extracted.txt',
     dag=dag,
 )
 
 # define the task 'transform'
 transform = BashOperator(
     task_id='transform',
-    bash_command='tr "[a-z]" "[A-Z]" < /home/project/airflow/dags/extracted.txt > /home/project/airflow/dags/capitalized.txt',
+    bash_command='tr "[a-z]" "[A-Z]" < /home/project/extracted.txt > /home/project/capitalized.txt',
     dag=dag,
 )
 
