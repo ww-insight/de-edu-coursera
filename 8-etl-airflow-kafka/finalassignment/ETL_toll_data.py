@@ -48,7 +48,7 @@ extract_data_from_csv = BashOperator(
 
 extract_data_from_tsv = BashOperator(
     task_id='extract_data_from_tsv',
-    bash_command='cut -d$\'\\t\' -f5-7 tollplaza-data.tsv | tr $\\\t\' \',\' | tr -d $\'\\r\' > tsv_data.csv',
+    bash_command='cut -d$\'\\t\' -f5-7 tollplaza-data.tsv | tr $\'\\t\' \',\' | tr -d $\'\\r\' > tsv_data.csv',
     cwd=bash_cwd,
     dag=dag,
 )
