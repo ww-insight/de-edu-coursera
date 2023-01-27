@@ -1,0 +1,25 @@
+MyDimDate:
+  DATE_ID
+  YEAR
+  QUARTER
+  QUARTER_NAME
+  MONTH
+  MONTH_NAME
+  DAY
+  DAY_OF_WEEK
+
+MyDimWaste:
+  WASTE_ID
+  WASTE_TYPE
+
+MyDimZone:
+  ZONE_ID
+  ZONE_NAME
+  ZONE_CITY
+
+MyFactTrips:
+  TRIP_ID
+  WASTE_TONS
+  DATE_ID
+  WASTE_ID
+  ZONE_ID
