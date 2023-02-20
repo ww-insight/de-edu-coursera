@@ -14,7 +14,7 @@ connection = MongoClient(connecturl)
 db = connection.training
 
 # select the 'python' collection
-
+list()
 collection = db.python
 
 # create a sample document
